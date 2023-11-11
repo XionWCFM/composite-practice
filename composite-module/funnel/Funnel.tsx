@@ -1,6 +1,10 @@
 import { Children, isValidElement } from 'react';
-import { NonEmptyArray, FunnelProps, StepProps } from './Funnel.type';
-
+import {
+  FunnelProps,
+  NonEmptyArray,
+  RouteFunnelProps,
+  StepProps,
+} from './Funnel.type';
 export const Funnel = <Steps extends NonEmptyArray<string>>({
   step,
   steps,

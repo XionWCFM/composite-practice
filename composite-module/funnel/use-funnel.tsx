@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useMemo } from 'react';
-import { NonEmptyArray, RouteFunnelProps, StepProps } from './Funnel.type';
 import { Funnel, Step } from './Funnel';
-
+import { NonEmptyArray, RouteFunnelProps, StepProps } from './Funnel.type';
 export const useFunnel = <Steps extends NonEmptyArray<string>>(
   array: Steps,
   option?: {

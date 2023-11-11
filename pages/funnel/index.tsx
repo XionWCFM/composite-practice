@@ -1,4 +1,4 @@
-import { useFunnel } from '@/composite-module/funnel/useFunnel';
+import { useFunnel } from '@/composite-module/funnel/use-funnel';
 import React from 'react';
 
 interface indexProps {}
