@@ -4,7 +4,7 @@ import {
   NonEmptyArray,
   RouteFunnelProps,
   StepProps,
-} from './Funnel.type';
+} from './funnel.type';
 export const Funnel = <Steps extends NonEmptyArray<string>>({
   step,
   steps,
