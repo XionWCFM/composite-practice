@@ -9,7 +9,7 @@ export const useClickLogging = (): UserTracker => {
   });
   return {
     track: (eventName, eventPath, options) => {
-      console.log('이렇게 로그를 찍습니다.', eventName, eventPath, user.userId);
+      console.log('이렇게 로그를 찍습니다.', eventName, eventPath, '순수하지 못한 기본 정보는 훅에서',user.userName);
     },
   };
 };
