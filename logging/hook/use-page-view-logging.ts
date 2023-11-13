@@ -3,24 +3,28 @@ import { UserTracker } from '../model/user-tracker';
 import { UserEventName } from '../model/user-event-name';
 import { UserEventPath } from '../model/user-event-path';
 
-export const useClickLogging = (): UserTracker => {
+export const usePageViewLogging = ({
+  eventName,
+  eventPath,
+  option,
+}: {
+  eventName: UserEventName;
+  eventPath: UserEventPath;
+  option?: Record<string, unknown>;
+}) => {
   const [user, setUser] = React.useState({
     userId: '안녕하세요',
     userGender: 'male',
-    userName: 'zozaachan',
+    userName: 'wooeunhe',
   });
 
-  return {
-    track: (eventName, eventPath, option) => {
-      loggingFetch({ eventName, eventPath, option, user }).then((data) =>
-        console.log('서버응답', data),
-      );
-      console.log({ eventName, eventPath, option, user });
-    },
-  };
+  React.useEffect(() => {
+    pageViewFetch({ eventName, eventPath, user, option }).then(console.log);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 };
 
-const loggingFetch = async ({
+const pageViewFetch = async ({
   eventName,
   eventPath,
   user,
@@ -31,7 +35,7 @@ const loggingFetch = async ({
   user: Record<string, unknown>;
   option?: Record<string, unknown>;
 }) => {
-  const response = await fetch('/api/log/click', {
+  const response = await fetch('/api/log/page-view', {
     method: 'POST',
     body: JSON.stringify({
       eventDate: new Date(),
