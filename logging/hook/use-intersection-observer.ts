@@ -19,7 +19,6 @@ const useIntersectionObserver = ({
   rootMargin = '0px',
   enabled = true,
 }: UseIntersectionObserver) => {
-  const memoizedOnIntersect = React.useCallback(onIntersect, []);
   React.useEffect(() => {
     if (!enabled) return;
 
@@ -50,7 +49,7 @@ const useIntersectionObserver = ({
     return () => {
       if (observer) observer.disconnect();
     };
-  }, [enabled, root, memoizedOnIntersect, rootMargin, target, threshold]);
+  }, [enabled, root, rootMargin, target, threshold]);
 };
 
 export default useIntersectionObserver;
