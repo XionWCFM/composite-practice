@@ -1,5 +1,4 @@
-import { Result } from './pattern';
-import { resultReducer } from './pattern';
+import { Result, resultReducer } from './pattern';
 
 describe('pattern 라이브러리를 학습합니다.', () => {
   it('기초적인 리듀서를 테스트해봅시다.', () => {
