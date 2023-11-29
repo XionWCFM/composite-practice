@@ -1,5 +1,4 @@
 import { match, P } from 'ts-pattern';
-import Image from 'next/image';
 
 export type Data =
   | { type: 'text'; content: string }
@@ -10,23 +9,38 @@ export type Result =
   | { type: 'error'; error: Error };
 
 export const resultReducer = (item: Result) =>
-  match<Result, JSX.Element>(item)
+  match<Result, string>(item)
     .with({ type: 'ok', data: { type: 'img' } }, (state) => {
-      return (
-        <Image
-          src={state.data.src}
-          alt="테스트입니다."
-          width={10}
-          height={10}
-        />
-      );
+      return '이거이미지네요';
     })
     .with({ type: 'ok', data: { type: 'text' } }, (state) => {
-      return <span>{state.data.content}</span>;
+      return '이거텍스트네요';
     })
     .with({ type: 'error' }, (state) => {
-      return <span>{state.error.message}</span>;
+      return '이거에러네요';
     })
     .otherwise((state) => {
-      return <span>기본으로 보여줄 텍스트</span>;
+      return '이거나머지네요';
+    });
+
+const ifFunction = (item: { type: 'ok' | 'error' }) => {
+  if (item.type === 'ok') {
+    return `${item.type}오케이네요`;
+  }
+  if (item.type === 'error') {
+    return `${item.type}에러네요`;
+  }
+  return '이거나머지네요';
+};
+
+const patternFunction = (item: { type: 'ok' | 'error' }) =>
+  match(item)
+    .with({ type: 'ok' }, (state) => {
+      return `${state.type}오케이네요`;
+    })
+    .with({ type: 'error' }, (state) => {
+      return `${state.type}에러네요`;
+    })
+    .otherwise(() => {
+      return '이거나머지네요';
     });

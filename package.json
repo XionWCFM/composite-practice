@@ -14,7 +14,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-joyride": "^2.7.0",
-    "ts-pattern": "^5.0.5"
+    "ts-pattern": "^5.0.5",
+    "xion-calculate": "^0.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.4",
