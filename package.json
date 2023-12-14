@@ -10,8 +10,10 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@xionhub/react-hook": "^0.0.13",
     "next": "14.0.2",
     "react": "^18",
+    "react-datepicker": "^4.24.0",
     "react-dom": "^18",
     "react-joyride": "^2.7.0",
     "ts-pattern": "^5.0.5",
