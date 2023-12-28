@@ -7,6 +7,9 @@ export const withConsole = <P extends object>(
   const WrappingComponent = (prop: P) => {
     return <Component {...prop} />;
   };
-  WrappingComponent.displayName = Component.displayName;
+  WrappingComponent.displayName = 'dsadsa';
+  console.log('wrap', WrappingComponent.displayName);
+  console.log('original', Component.displayName);
+
   return WrappingComponent;
 };
