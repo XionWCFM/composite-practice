@@ -6,7 +6,7 @@ interface HelloProps {
   num: string;
 }
 
-const Hello = ({ value, num }: HelloProps) => {
+const HighOrderConsumer = ({ value, num }: HelloProps) => {
   return (
     <div>
       <div className="">{value}</div>
@@ -15,4 +15,4 @@ const Hello = ({ value, num }: HelloProps) => {
   );
 };
 
-export default withCertified(Hello);
+export default withCertified(HighOrderConsumer);
