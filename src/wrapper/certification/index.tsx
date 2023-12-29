@@ -4,12 +4,14 @@ import { useAtomValue } from 'jotai';
 
 export const CertificationWrapper = ({
   children,
+  fallback,
 }: {
   children?: React.ReactNode;
+  fallback?: React.ReactNode;
 }) => {
   const certificate = useAtomValue(certificationAtom);
   if (certificate.isLogin) {
     return children;
   }
-  return <LoginPage />;
+  return fallback ?? <LoginPage />;
 };
