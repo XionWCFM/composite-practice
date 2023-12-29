@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/react-datepicker": "^4.19.4",
     "@xionhub/react-hook": "^0.0.13",
+    "jotai": "^2.6.1",
     "next": "14.0.2",
     "react": "^18",
     "react-datepicker": "^4.24.0",

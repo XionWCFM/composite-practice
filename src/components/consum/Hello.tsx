@@ -1,5 +1,5 @@
 import React from 'react';
-import { withConsole } from '../hoc/example';
+import { withCertified } from '../../hoc/certified';
 
 interface HelloProps {
   value: string;
@@ -15,4 +15,4 @@ const Hello = ({ value, num }: HelloProps) => {
   );
 };
 
-export default withConsole(Hello);
+export default withCertified(Hello);
