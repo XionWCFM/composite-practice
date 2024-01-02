@@ -10,6 +10,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@toss/utils": "^1.4.6",
     "@types/react-datepicker": "^4.19.4",
     "@xionhub/react-hook": "^0.0.13",
     "jotai": "^2.6.1",
