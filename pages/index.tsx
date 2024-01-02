@@ -1,21 +1,17 @@
 import HighOrderConsumer from '@/src/components/consum/highorder-consumer';
 import WrapperConsumer from '@/src/components/consum/wrapper-consumer';
 import { CertificationWrapper } from '@/src/wrapper/certification';
+import { get } from '@toss/utils';
 import React from 'react';
 export default function Home() {
-  React.useEffect(() => {
-    (async () => {
-      const a = await Promise.allSettled([
-        new Promise((res) => {
-          res('hi');
-        }),
-        new Promise((res, rej) => {
-          rej('bye');
-        }),
-      ]);
-      console.log(a);
-    })();
-  }, []);
+  const deepObj = {
+    hi: {
+      hello: {
+        dgs: 123,
+      },
+    },
+  };
+  const getter = get<number>(deepObj, 'hi.hello.dgs');
   return (
     <div className="flex flex-col items-center justify-center gap-y-2">
       <div className="">고차컴포넌트형식</div>
@@ -24,6 +20,8 @@ export default function Home() {
       <CertificationWrapper>
         <WrapperConsumer />
       </CertificationWrapper>
+      <div className="">{getter}</div>
     </div>
   );
 }
+g
